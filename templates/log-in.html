@@ -21,6 +21,19 @@
         }
         .btn-primary {
             border-radius: 5px;
+            background-color: #405978; /* Set button background color */
+            border-color: #405978; /* Set button border color */
+        }
+        .btn-primary:hover {
+            background-color: #31415b; /* Darker shade for hover effect */
+            border-color: #31415b;
+        }
+        .register-link {
+            color: #405978; /* Set color for register link */
+        }
+        .register-link:hover {
+            color: #31415b; /* Darker shade for hover effect */
+            text-decoration: none;
         }
     </style>
 </head>
@@ -47,7 +60,7 @@
                                 {{ form.submit(class_='btn btn-primary btn-block') }}
                             </div>
                         </form>
-                        <p class="text-center">Don't have an account? <a href="{{ url_for('sign') }}">Register here</a></p>
+                        <p class="text-center">Don't have an account? <a href="{{ url_for('sign') }}" class="register-link">Register here</a></p>
                     </div>
                 </div>
             </div>
