@@ -1,28 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='log-in.css') }}">
-    <title>Log In</title>
+    <title>Login</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .login-container {
+            margin-top: 50px;
+        }
+        .card {
+            border-radius: 10px;
+        }
+        .form-control {
+            border-radius: 5px;
+        }
+        .btn-primary {
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="form-container">
-            <div class="form-header">
-                <h2>Log in</h2>
+    <div class="container login-container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h4>Login</h4>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" action="{{ url_for('login') }}">
+                            {{ form.hidden_tag() }}
+                            <div class="form-group">
+                                {{ form.email.label(class_='form-label') }}
+                                {{ form.email(class_='form-control', placeholder='Enter your email') }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.password.label(class_='form-label') }}
+                                {{ form.password(class_='form-control', placeholder='Enter your password') }}
+                            </div>
+                            <div class="form-group text-center">
+                                {{ form.submit(class_='btn btn-primary btn-block') }}
+                            </div>
+                        </form>
+                        <p class="text-center">Don't have an account? <a href="{{ url_for('sign') }}">Register here</a></p>
+                    </div>
+                </div>
             </div>
-            <form class="log-in-form">
-                <div class="form-field">
-                    <input type="email" placeholder="Email address" required>
-                </div>
-                <div class="form-field">
-                    <input type="password" placeholder="Password" required>
-                </div>
-                <button type="submit" class="form-button">Log in</button>
-            </form>
         </div>
     </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

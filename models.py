@@ -5,6 +5,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, relationship
 from datetime import datetime
 from enum import Enum
+from flask_login import UserMixin
 
 Base = declarative_base()
 
@@ -12,7 +13,7 @@ class Role(Enum):
     ADMIN = 'admin'
     CUSTOMER = 'customer'
 
-class User(Base):
+class User(Base, UserMixin):
     __tablename__ = 'users'
     id = Column(Integer, primary_key=True, index=True)
     username = Column(String, unique=True, index=True, nullable=False)
@@ -20,6 +21,7 @@ class User(Base):
     email = Column(String, unique=True, index=True, nullable=False)
     created_at = Column(DateTime, default=datetime.utcnow)
     role = Column(SQLAlchemyEnum(Role), nullable=False, server_default=Role.CUSTOMER.name)
+
     orders = relationship("Order", back_populates="user")
     reviews = relationship("Review", back_populates="user")
     cart = relationship("Cart", uselist=False, back_populates="user")
