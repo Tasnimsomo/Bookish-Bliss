@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookish-Bliss</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+    <section class="main">
+        <div class="main-image">
+            <img src="{{ url_for('static', filename='aesthetic blue.jpeg') }}" alt="Main Image">
+        </div>
+        <div class="text-overlay">
+            <a href="{{ url_for('home') }}" class="clickable-text">
+                <h1>Bookish-Bliss</h1>
+            </a>
+        </div>
+    </section>
+
+    <section class="main_2">
+        <div class="main-image_2">
+            <img src="{{ url_for('static', filename='ashley_bard.jpg') }}" alt="2-Main Image">
+        </div>
+    </section>
+
+    <section class="books">
+        <div class="main-image_3">
+            <img src="{{ url_for('static', filename='twisted series.jpeg') }}" alt="3-Main Image">
+            <div class="category">Romance novels</div>
+        </div>
+        <div class="main-image_4">
+            <img src="{{ url_for('static', filename='Harry Potter_ Books 1-7.jpeg') }}" alt="4-Main Image">
+            <div class="category">Fictional novels</div>
+        </div>
+        <div class="main-image_5">
+            <img src="{{ url_for('static', filename='Books & Flowers.jpeg') }}" alt="5-Main Image">
+            <div class="category">Mystery/Thriller novels</div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+          <div class="tagline">
+            <p>"Where books come alive!"</p>
+            <p>"Every book is a treasure._."</p>
+          </div>
+          <div class="quote">
+            <p>"In every book lies a new adventure, a new perspective, and a magical escape from reality, waiting to be discovered."</p>
+          </div>
+          <div class="contact-info">
+            <p>Email: support@bookish-bliss.com</p>
+            <p>Address: 123 Main Street, Nairobi, Kenya</p>
+          </div>
+          <div class="copyright">
+            <p>&copy; 2024 Bookstore. All Rights Reserved.</p>
+          </div>
+        </div>
+    </footer>
+    
+</body>
+</html>

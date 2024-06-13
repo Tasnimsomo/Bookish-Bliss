@@ -1,0 +1,131 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #405978;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.hamburger-menu {
+    display: flex;
+    align-items: center;
+}
+
+.hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.hamburger-icon span {
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+}
+
+.genre-menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: #c9e0ff;
+    color: #333;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    margin: 15px 5px;
+}
+
+.genre-menu.show {
+    display: block;
+}
+
+.genre-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.genre-menu li {
+    margin-bottom: 5px;
+}
+
+.genre-menu a {
+    color: #333;
+    text-decoration: none;
+}
+
+.logo h1 {
+    font-family: 'Mystery Quest', cursive;
+    font-size: 36px;
+    font-style: italic;
+    margin: 0;
+    color: #6495ed;
+    margin-left: -250px;
+}
+
+.search-bar input {
+    padding: 10px 12px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    margin-left: -200px;
+}
+
+.profile-cart {
+    display: flex;
+    align-items: center;
+
+}
+
+.profile-icon {
+    position: relative;
+    margin-right: 20px;
+    color: #b7c1ed;
+    font-size: 28px;
+    
+}
+
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: #fff;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.profile-dropdown a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.profile-icon:hover .profile-dropdown {
+    display: block;
+}
+
+.cart-icon {
+    color: #d6c9fa;
+    font-size: 28px;
+}
